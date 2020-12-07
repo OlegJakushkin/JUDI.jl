@@ -45,11 +45,7 @@ RUN julia -e 'using Pkg; Pkg.add("NLopt")' && \
 
 RUN PYTHON=$(which python3) julia -e 'using Pkg; Pkg.build("PyCall")'
 # Precompiler packages
-<<<<<<< HEAD
-RUN julia -e 'using JOLI, SegyIO, Images, PyCall, Distributed, JUDI, SlimOptim, JLD2, HDF5'
-=======
 RUN julia -e 'using JOLI, SegyIO, Images, PyCall, Distributed, JUDI.TimeModeling, SlimOptim, JLD2, HDF5'
->>>>>>> update dockerfile
 
 # Install and build IJulia
 ENV JUPYTER="/root/.local/bin/jupyter"
