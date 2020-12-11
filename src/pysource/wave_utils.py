@@ -245,8 +245,9 @@ def idft(v, freq=None):
         time = ufr.grid.time_dim
         dt = time.spacing
         omega_t = lambda f: 2*np.pi*f*time*dt
-        idftloc = sum([ufr.subs({ufr.indices[0]: i})*cos(omega_t(f)) -
-                       ufi.subs({ufi.indices[0]: i})*sin(omega_t(f))
+        w = 1/time.symbolic_max
+        idftloc = sum([w*(ufr.subs({ufr.indices[0]: i})*cos(omega_t(f)) -
+                          ufi.subs({ufi.indices[0]: i})*sin(omega_t(f)))
                        for i, f in enumerate(freq)])
         idft.append(idftloc)
     return tuple(idft)

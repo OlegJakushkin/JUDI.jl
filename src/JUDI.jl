@@ -38,7 +38,7 @@ include("TimeModeling/TimeModeling.jl")
 # Backward compatibility for JUDI
 module TimeModeling
     using Reexport
-    @reexport using JUDI
+    @reexport using ..JUDI
     Base.@warn "JUDI.TimeModeling is deprecated, use `using JUDI` instead"
 end
 
