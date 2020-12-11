@@ -133,7 +133,12 @@ def gradient(model, residual, rcv_coords, u, return_op=False, space_order=8,
     op = Operator(pde + geom_expr + g_expr,
                   subs=subs, name="gradient"+name(model),
                   opt=opt_op(model))
-
+    try:
+        op.cfunction
+    except:
+        op = Operator(pde + geom_expr + g_expr,
+                      subs=subs, name="gradient"+name(model),
+                      opt='advanced')
     if return_op:
         return op, gradm, v
 

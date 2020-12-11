@@ -115,7 +115,7 @@ dt = srcGeometry.dt[1]
         ##################################ISIC + DFT #########################################################
         println("Testing isic+dft")
         opt = Options(sum_padding=true, free_surface=parsed_args["fs"],
-                isic=true, frequencies=[2.5, 4.5])
+                      isic=true, frequencies=[2.5, 4.5])
         F = judiModeling(info, model0, srcGeometry, recGeometry; options=opt)
 
         # Linearized modeling

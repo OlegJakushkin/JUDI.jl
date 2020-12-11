@@ -22,7 +22,7 @@ import Base.Broadcast.broadcasted, Base.BroadcastStyle, Base.Broadcast.DefaultAr
 import Base.getindex, Base.setindex!, Base.firstindex, Base.lastindex
 import Base.similar, Base.isapprox, Base.isequal
 import Base.materialize!, Base.materialize
-import Base.promote_shape
+import Base.promote_shape, Base.diff, Base.cumsum, Base.cumsum!
 
 # Import Linear Lagebra functions to dispatch on JUDI types
 import LinearAlgebra.transpose, LinearAlgebra.conj, LinearAlgebra.vcat, LinearAlgebra.adjoint
