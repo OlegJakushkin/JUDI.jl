@@ -92,7 +92,7 @@ def opt_op(model):
         except InvalidOperator:
             opts.pop('min-storage')
     # Cire rotate for tti
-    if model.is_tti or model.fs:
+    if model.is_tti and model.dim > 2:
         try:
             opts['cire-rotate'] = True
             'cire-rotate' in cpo._normalize_kwargs(options=dict(opts))['options']

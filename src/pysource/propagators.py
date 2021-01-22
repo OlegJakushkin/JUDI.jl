@@ -46,7 +46,7 @@ def forward(model, src_coords, rcv_coords, wavelet, space_order=8, save=False,
 
     # Create operator and run
     subs = model.spacing_map
-    op = Operator(pde + geom_expr + dft + eq_save,
+    op = Operator(pde + dft + geom_expr + eq_save,
                   subs=subs, name="forward"+name(model),
                   opt=opt_op(model))
 
